@@ -14,6 +14,7 @@ class Program
         Application.SetCompatibleTextRenderingDefault(false); //not sure purpose?
 
         GameScreen screen = new GameScreen(); //create new Form object window for our game panel window
+        GameLoop loop = new GameLoop(screen);
         
         screen.Text = "MovementSim";
         //  screen.Height = 600;
