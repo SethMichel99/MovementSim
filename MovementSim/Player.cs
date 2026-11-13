@@ -8,6 +8,7 @@
         public int playerWidth;
 
         public int playerHeight;
+
        
         public Player(int playerWidth, int playerX, int playerY, int playerHeight)
         {
@@ -39,5 +40,7 @@
         {
             playerY += speed;
         }
+
+        
     }
 }

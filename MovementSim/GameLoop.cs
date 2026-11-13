@@ -15,14 +15,10 @@ namespace MovementSim
             timer.Interval = 16; //mili seconds
             timer.Tick += OnTick; //interval sets the tick, every tick runs the OnTick method
             timer.Start(); //start timer class
-
-        
-        
         }
-
         public void OnTick(object? sender, EventArgs e)
         {
-
+            gameScreen.UpdateGame();
             gameScreen.Invalidate();
         
         }
