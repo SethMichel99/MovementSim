@@ -31,6 +31,7 @@ namespace MovementSim
             base.OnKeyDown(e);
             if (e.KeyCode == Keys.D) //RIGHT MOVEMENT
             {
+              
                isRight = true;   
             }
                  
@@ -102,30 +103,27 @@ namespace MovementSim
             }
         }
 
-        public void UpdateGame()
+        public void UpdateGame(double deltaTime, double speed)
         {
+            speed = 10 * deltaTime;
+            
             if (isRight)
             {
                 player.MoveRight(10);
-                CheckPerim();
             }
             if (isLeft)
             {
                 player.MoveLeft(10);
-                CheckPerim();
             }
             if (isUp)
             {
-                player.MoveUp(10);
-                CheckPerim();
+                player.MoveUp(10);             
             }
             if (isDown)
             {
                 player.MoveDown(10);
-                CheckPerim();
-            
             }
-
+            CheckPerim();
         }
         
     }
