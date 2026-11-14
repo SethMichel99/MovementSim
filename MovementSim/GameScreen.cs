@@ -8,7 +8,7 @@ namespace MovementSim
 {
     internal class GameScreen : Form
     {
-        Player player = new Player(100, 100, 100, 100);
+        Player player = new Player(100, 100.0, 100.0, 100);
 
 
         bool isRight = false;
@@ -23,7 +23,7 @@ namespace MovementSim
 
             Graphics g = e.Graphics;
 
-            g.FillRectangle(Brushes.Aqua, player.playerX, player.playerY, 100, 100);
+            g.FillRectangle(Brushes.Aqua, (float)player.playerX, (float)player.playerY, 100, 100);
 
         }
         protected override void OnKeyDown(KeyEventArgs e)
@@ -105,23 +105,25 @@ namespace MovementSim
 
         public void UpdateGame(double deltaTime, double speed)
         {
-            speed = 10 * deltaTime;
+            // speed = 10 * deltaTime; //wrong logic, 10 = 10 * deltaTime
+
+            double movement = speed * deltaTime; //movement will capture correct distance measured for player using speed and deltaTime
             
             if (isRight)
             {
-                player.MoveRight(10);
+                player.MoveRight(movement);
             }
             if (isLeft)
             {
-                player.MoveLeft(10);
+                player.MoveLeft(movement);
             }
             if (isUp)
             {
-                player.MoveUp(10);             
+                player.MoveUp(movement);             
             }
             if (isDown)
             {
-                player.MoveDown(10);
+                player.MoveDown(movement);
             }
             CheckPerim();
         }

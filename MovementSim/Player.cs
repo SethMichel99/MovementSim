@@ -2,15 +2,15 @@
 {
     internal class Player
     {
-        public int playerX;
-        public int playerY;
+        public double playerX;
+        public double playerY;
 
-        public int playerWidth;
+        public double playerWidth;
 
-        public int playerHeight;
+        public double playerHeight;
 
        
-        public Player(int playerWidth, int playerX, int playerY, int playerHeight)
+        public Player(double playerWidth, double playerX, double playerY, double playerHeight)
         {
             
             this.playerHeight = playerHeight;
@@ -20,23 +20,23 @@
             
         }
 
-        public void MoveRight(int speed)
+        public void MoveRight(double speed)
         {
             playerX += speed;
         }
-        public void MoveLeft(int speed)
+        public void MoveLeft(double speed)
         {
             playerX -= speed;
         
         }
-        public void MoveUp(int speed)
+        public void MoveUp(double speed)
         {
             playerY -= speed;
 
         
         }
 
-        public void MoveDown(int speed)
+        public void MoveDown(double speed)
         {
             playerY += speed;
         }

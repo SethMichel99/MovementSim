@@ -28,7 +28,7 @@ namespace MovementSim
         {
             double deltaTime = watch.Elapsed.TotalSeconds; //variable to store elapsed time between ticks
             watch.Restart(); //restart after capturing tick time
-            gameScreen.UpdateGame(deltaTime, 10); //game gets updated in deltaTime, 
+            gameScreen.UpdateGame(deltaTime, 100); //game gets updated in deltaTime, 
             gameScreen.Invalidate();
         
         }
